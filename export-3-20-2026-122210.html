@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0" />
+<title></title>
+<style type="text/css">
+:root {
+    --primary-color: #1e3a8a;
+    --accent-color: #3b82f6;
+    --text-color: #333;
+    --bg-light: #f8fafc;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+}
+
+/* القائمة العلوية */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* قسم الترحيب */
+.hero-section {
+    height: 60vh;
+    background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.8)), 
+                url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.cta-button {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* الكروت */
+.section { padding: 50px 5%; }
+.section-title { text-align: center; margin-bottom: 30px; }
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card:hover { transform: translateY(-10px); }
+.card-img { font-size: 50px; margin-bottom: 15px; }
+
+button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة Mr. Mahrous | للغة العربية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body>
+
+    <!-- القائمة العلوية -->
+    <nav class="navbar">
+        <div class="logo">Mr. Mahrous 🖋️</div>
+        <ul class="nav-links">
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#courses">المحاضرات</a></li>
+            <li><a href="#books">المكتبة</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+        <button class="login-btn">تسجيل دخول</button>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <header id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>لغتنا العربية.. هوية وإبداع</h1>
+            <p>تعلم اللغة العربية بأسلوب حديث ومبسط مع المستر محروس.</p>
+            <a href="#courses" class="cta-button">ابدأ التعلم الآن</a>
+        </div>
+    </header>
+
+    <!-- قسم المحاضرات -->
+    <section id="courses" class="section">
+        <h2 class="section-title">المحاضرات المتاحة</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-img">🎬</div>
+                <h3>شرح درس النحو</h3>
+                <p>الصف الأول الثانوي - الترم الثاني</p>
+                <button onclick="showAlert()">مشاهدة الآن</button>
+            </div>
+            <div class="card">
+                <div class="card-img">📖</div>
+                <h3>بلاغة العصر العباسي</h3>
+                <p>أساسيات البلاغة لطلاب الثانوي</p>
+                <button onclick="showAlert()">مشاهدة الآن</button>
+            </div>
+            <div class="card">
+                <div class="card-img">📝</div>
+                <h3>بنك الأسئلة الشامل</h3>
+                <p>اختبارات تفاعلية لتقييم مستواك</p>
+                <button onclick="window.location.href='#home'">ابدأ الاختبار</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<script type="text/javascript">
+(function() {
+function showAlert() {
+    alert("سيتم فتح المحاضرة قريباً.. تأكد من تسجيل دخولك أولاً!");
+}
+
+// إضافة تأثير عند التمرير
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        nav.style.background = '#f1f5f9';
+    } else {
+        nav.style.background = 'white';
+    }
+});
+
+})();
+</script>
+</body>
+</html>
