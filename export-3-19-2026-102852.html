@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0" />
+<title></title>
+<style type="text/css">
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.quiz-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 350px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-btn {
+    padding: 12px;
+    border: 2px solid #007bff;
+    background: white;
+    color: #007bff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.option-btn:hover {
+    background: #007bff;
+    color: white;
+}
+
+#result-message {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+</style>
+</head>
+<body>
+
+إليك كود لإنشاء تطبيق اختبار (Quiz App) بسيط جداً يحتوي على سؤال واحد. يتميز التصميم بكونه عصرياً ومتجاوباً مع مختلف الشاشات.
+1. هيكل HTML (index.html)
+هذا الملف يحدد العناصر الأساسية: السؤال، الخيارات، وزر التحقق.
+html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق اختبار بسيط</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h2 id="question">ما هي عاصمة فرنسا؟</h2>
+        
+        <div class="options">
+            <button class="option-btn" onclick="checkAnswer('لندن')">لندن</button>
+            <button class="option-btn" onclick="checkAnswer('باريس')">باريس</button>
+            <button class="option-btn" onclick="checkAnswer('مدريد')">مدريد</button>
+            <button class="option-btn" onclick="checkAnswer('روما')">روما</button>
+        </div>
+
+        <p id="result-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script type="text/javascript">
+(function() {
+function checkAnswer(selectedOption) {
+    const correctAnswer = "باريس";
+    const resultElement = document.getElementById("result-message");
+
+    if (selectedOption === correctAnswer) {
+        resultElement.innerText = "🎉 إجابة صحيحة!";
+        resultElement.style.color = "#28a745"; // لون أخضر
+    } else {
+        resultElement.innerText = "❌ إجابة خاطئة، حاول مرة أخرى.";
+        resultElement.style.color = "#dc3545"; // لون أحمر
+    }
+}
+})();
+</script>
+</body>
+</html>
